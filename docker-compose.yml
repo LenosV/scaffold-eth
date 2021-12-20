@@ -1,0 +1,14 @@
+version: '3'
+services:
+  # Update this to the name of the service you want to work with in your docker-compose.yml file
+  scaffold-eth:
+    container_name: scaffold-eth
+    image: scaffold-eth-devel
+    build:
+      context: .
+    ports:
+      - "3000:3000"
+      - "8545:8545"
+    volumes:
+      - ./:/opt/scaffold-eth
+    command: /bin/sh -c "while sleep 1000; do :; done"
